@@ -1,0 +1,26 @@
+[Unit]
+Description=Resource Adequacy SprringBoot Application
+After=syslog.target
+After=network.target[Service]
+User=resource-adequacy
+Type=simple
+
+[Service]
+User=resource-adequacy
+ExecStart=/home/resource-adequacy/jarroot/resource-adequacy.jar 
+SuccessExitStatus=143 
+
+[Install] 
+WantedBy=multi-user.target
+
+
+
+systemctl enable resourceadequacy
+systemctl start resourceadequacy
+systemctl stop resourceadequacy
+systemctl restart resourceadequacy
+systemctl status resourceadequacy
+
+
+
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk-17-oracle-x64/bin/java" 1

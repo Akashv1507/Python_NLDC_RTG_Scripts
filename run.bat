@@ -1,0 +1,4 @@
+call index_pushOutageData.exe
+call index_pushWbesSdlData.exe
+call index_pushIntraStateSdlData.exe
+call index_pushScadaActualData.exe
